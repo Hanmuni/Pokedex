@@ -1,6 +1,6 @@
 let allPokemons = [];
 let currentPokemonNumber = 0;
-let nextPokemonNumber = 18;
+let nextPokemonNumber = 28;
 
 async function start() {
     await loadAPI();
@@ -39,8 +39,8 @@ function generatePokemonList(i) {
 function loadMorePokemons() {
 
     if (nextPokemonNumber <= 898) {
-        currentPokemonNumber += 18;
-        nextPokemonNumber += 18;
+        currentPokemonNumber += 28;
+        nextPokemonNumber += 28;
         loadPokemonList();
     } else {
         alert('All Pokemon Loaded');
