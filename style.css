@@ -16,6 +16,44 @@ body {
     border-bottom: 4px solid #09214D;
 }
 
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 16px;
+    color: #09214D;
+    font-size: 32px;
+    animation: moveUpDown 800ms ease-in-out infinite alternate;
+}
+
+.loading-image {
+    width: 32px;
+    height: 32px;
+    padding: 2px;
+    object-fit: cover;
+    animation: rotate ease-in-out 3s infinite;
+}
+
+@keyframes moveUpDown {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-16px);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 .pokemons btn {
     display: flex;
     justify-content: center;
@@ -269,6 +307,15 @@ input {
 }
 
 @media(max-width: 1000px) {
+
+    .loading {
+        font-size: 16px;
+    }
+
+    .loading-image {
+        width: 16px;
+        height: 16px;
+    }
     .pokemon-list {
         display: flex;
         flex-direction: column;

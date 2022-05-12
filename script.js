@@ -4,6 +4,7 @@ let nextPokemonNumber = 18;
 
 async function start() {
     await loadAPI();
+    document.getElementById('loading').classList.add('d-none');
     loadPokemonList();
 }
 
