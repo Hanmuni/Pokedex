@@ -173,6 +173,7 @@ input {
 .name {
     font-size: 32px;
     color: #09214D;
+    text-transform:capitalize;
 }
 
 .type {
@@ -203,6 +204,7 @@ input {
     display: flex;
     align-items: center;
     justify-content: center;
+    text-transform:capitalize;
 }
 
 .card-inner {
