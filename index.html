@@ -6,16 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Commissioner:wght@100;200;300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
+    <link rel="stylesheet" href="fonts.css">
+    <link rel="icon" href="img/pokeball.png">
     <script src="script.js"> </script>
     <title> Pokédex </title>
-
-
 
 </head>
 
@@ -26,7 +20,7 @@
         <div class="headline"> P<img class="header-image" src="img/pokeball.png">kédex </div>
 
         <div class="searchfield">
-            <input id="searchfield" placeholder="Suche dein Pokémon"> <button class="search-btn"
+            <input id="searchfield" placeholder="Search your Pokémon"> <button class="search-btn"
                 onclick="searchPokemon()"></button>
             <div id="result" class="d-none"></div>
         </div>
@@ -34,22 +28,33 @@
 
     <div class="loading" id="loading">
         <span> L<img class="loading-image" src="img/pokeballHover.png">ading</span> <span> P<img class="loading-image"
-                src="img/pokeballHover.png">okédex</span> <span class="loading-dots">... </span>
+                src="img/pokeballHover.png">kédex</span> <span class="loading-dots">... </span>
     </div>
 
     <div class="card d-none" id="card"> </div>
 
     <div class="pokemons">
 
-
         <div class="pokemon-list" id="pokemon">
+
+        </div>
+
+        <div class="not-found d-none" id="not-found">
+            <button class="load-more-btn" onclick="returnToPokedex()"> Return </button>
+        </div>
+
+        <div class="all-loaded d-none" id="all-loaded">
+
+            You've catch 'em all
 
         </div>
 
         <div class="load-more">
             <button id="load-more-btn" class="load-more-btn d-none" onclick="loadMorePokemons()"> Load More </button>
         </div>
+
     </div>
+
 </body>
 
 </html>

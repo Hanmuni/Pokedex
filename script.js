@@ -1,6 +1,6 @@
 let allPokemons = [];
 let currentPokemonNumber = 0;
-let nextPokemonNumber = 28;
+let nextPokemonNumber = 25;
 
 async function start() {
     await loadAPI();
@@ -39,18 +39,17 @@ function generatePokemonList(i) {
 function loadMorePokemons() {
 
     if (nextPokemonNumber <= 898) {
-        currentPokemonNumber += 28;
-        nextPokemonNumber += 28;
+        currentPokemonNumber += 25;
+        nextPokemonNumber += 25;
         loadPokemonList();
     } else {
-        alert('All Pokemon Loaded');
+        document.getElementById('all-loaded').classList.remove('d-none');
         document.getElementById('load-more-btn').classList.add('d-none');
     }
 }
 
 function searchPokemon() {
-    let search = document.getElementById('searchfield').value;
-    search = search.toLowerCase();
+    let search = document.getElementById('searchfield').value.toLowerCase();
 
     document.getElementById('pokemon').innerHTML = '';
 
@@ -58,9 +57,20 @@ function searchPokemon() {
         if (allPokemons[i]['name'].toLowerCase().includes(search)) {
             document.getElementById('pokemon').innerHTML += generatePokemonList(i);
             document.getElementById('pokemon').style = `justify-content: center;`;
+            document.getElementById('load-more-btn').classList.add('d-none');
+        } else {
+            document.getElementById('not-found').classList.remove('d-none');
+            document.getElementById('load-more-btn').classList.add('d-none');
         }
     }
     document.getElementById('searchfield').value = '';
+    
+}
+
+function returnToPokedex() {
+    document.getElementById('not-found').classList.add('d-none');
+    document.getElementById('pokemon').classList.remove('d-none');
+    loadPokemonList();
 }
 
 function openPokemonCard(i) {
@@ -69,6 +79,8 @@ function openPokemonCard(i) {
     document.getElementById('card').classList.remove('d-none');
     document.getElementById('load-more-btn').classList.add('d-none');
     document.getElementById('card').innerHTML = generatePokemonCard(i);
+    document.getElementById('all-loaded').classList.add('d-none');
+    document.getElementById('not-found').classList.add('d-none');
     changeColor(i);
 }
 
@@ -98,7 +110,7 @@ function generatePokemonCard(i) {
             <button class="right-btn" onclick="nextPokemon(${i})"></button>
         </div>
         `;
-        }
+}
 
 function changeColor(i) {
     let pokemonType = allPokemons[i]['types'][0]['type']['name'];
@@ -178,5 +190,5 @@ function closeCard() {
     document.getElementById('header').classList.remove('d-none');
     document.getElementById('pokemon').classList.remove('d-none');
     document.getElementById('card').classList.add('d-none');
-    document.getElementById('load-more-btn').classList.remove('d-none');
+    document.getElementById('not-found').classList.remove('d-none');
 }

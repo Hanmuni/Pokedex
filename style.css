@@ -1,7 +1,11 @@
-body {
-    margin: 0;
+* {
     font-family: 'Press Start 2P', cursive;
 }
+
+body {
+    margin: 0;
+}
+
 
 .header {
     display: flex;
@@ -114,6 +118,7 @@ input {
     width: 200px;
     height: 28px;
     text-align: center;
+    font-size: 10px;
 }
 
 .search-btn {
@@ -147,6 +152,7 @@ input {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    color: #09214D;
 }
 
 .pokemon-img {
@@ -157,7 +163,6 @@ input {
 
 .pokemon-name {
     color: #7B838A;
-    font-family: 'Commissioner', sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -165,13 +170,13 @@ input {
 }
 
 .number {
-    font-size: 28px;
+    font-size: 16px;
     color: #09214D;
     margin: 8px;
 }
 
 .name {
-    font-size: 32px;
+    font-size: 18px;
     color: #09214D;
     text-transform: capitalize;
 }
@@ -211,7 +216,6 @@ input {
     width: 300px;
     height: 500px;
     background-color: #D0C5FD;
-    font-family: 'Commissioner', sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -269,6 +273,7 @@ input {
 
 .load-more {
     padding: 8px;
+    margin: 16px;
     display: flex;
     justify-content: center;
 }
@@ -295,6 +300,25 @@ input {
     height: 16px;
     padding: 2px;
     object-fit: cover;
+}
+
+.not-found {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #09214D;
+    padding: 8px;
+    margin: 16px;
+}
+
+.all-loaded {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #09214D;
+    padding: 8px;
+    margin: 16px;
 }
 
 .swipe {
